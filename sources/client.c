@@ -6,7 +6,7 @@
 /*   By: lucocozz <lucocozz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 03:24:08 by lucocozz          #+#    #+#             */
-/*   Updated: 2021/06/28 17:46:22 by lucocozz         ###   ########.fr       */
+/*   Updated: 2021/06/28 19:02:41 by lucocozz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,5 @@ int	main(int argc, char **argv)
 	signal(SIGUSR2, &receive_signal);
 	get_data(&server, argc, argv);
 	send_data(&server);
-	pause();
 	return (0);
 }

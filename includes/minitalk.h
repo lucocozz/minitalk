@@ -6,7 +6,7 @@
 /*   By: lucocozz <lucocozz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 03:14:42 by lucocozz          #+#    #+#             */
-/*   Updated: 2021/06/28 18:03:50 by lucocozz         ###   ########.fr       */
+/*   Updated: 2021/06/28 18:45:44 by lucocozz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <sys/types.h>
-
-# define NO_BYTE -1
 
 typedef struct s_sending
 {

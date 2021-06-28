@@ -6,7 +6,7 @@
 /*   By: lucocozz <lucocozz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 03:24:44 by lucocozz          #+#    #+#             */
-/*   Updated: 2021/06/28 18:51:50 by lucocozz         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:31:03 by lucocozz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	set_signal(struct sigaction *act, int sig,
 	void (*handler)(int, siginfo_t *, void *))
 {
-	act->sa_flags = SA_SIGINFO | SA_NODEFER;
+	act->sa_flags = SA_SIGINFO;
 	act->sa_sigaction = handler;
 	sigaction(sig, act, NULL);
 }

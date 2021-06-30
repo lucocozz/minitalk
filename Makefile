@@ -6,7 +6,7 @@
 #    By: lucocozz <lucocozz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/26 03:46:20 by lucocozz          #+#    #+#              #
-#    Updated: 2021/06/28 18:08:51 by lucocozz         ###   ########.fr        #
+#    Updated: 2021/06/30 16:01:13 by lucocozz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CLIENT_SRCS=	client.c
 SERVER_SRCS=	server.c
 
 UTILS_SRCS=		ft_putnbr.c			ft_putstr.c			ft_strlen.c			\
-				ft_atoi.c			exit_error.c		ft_isnumber.c
+				ft_atoi.c			exit_error.c		ft_isnumber.c		\
+				set_signal.c
 
 UTILS_OBJS = $(UTILS_SRCS:%.c=$(OBJS_DIR)/%.o)
 CLIENT_OBJS = $(CLIENT_SRCS:%.c=$(OBJS_DIR)/%.o)

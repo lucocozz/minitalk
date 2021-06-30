@@ -6,7 +6,7 @@
 /*   By: lucocozz <lucocozz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 03:24:08 by lucocozz          #+#    #+#             */
-/*   Updated: 2021/06/30 16:20:34 by lucocozz         ###   ########.fr       */
+/*   Updated: 2021/06/30 17:28:29 by lucocozz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ static void	send_byte(pid_t pid, char byte)
 				exit_error("Error: sending byte.\n");
 		}
 		i++;
-		// pause();
-		usleep(100);
+		usleep(50);
 	}
 }
 
@@ -58,24 +57,21 @@ static void	get_data(t_sending *server, int argc, char **argv)
 static void	receive_signal(int signal, siginfo_t *info, void *data)
 {
 	(void)data;
-	if (signal == SIGUSR1)
-	{
-		ft_putstr("Message received by server: ");
-		ft_putnbr(info->si_pid);
-		ft_putstr("\n");
-		exit(EXIT_SUCCESS);
-	}
+	(void)signal;
+	ft_putstr("Message received by server: ");
+	ft_putnbr(info->si_pid);
+	ft_putstr("\n");
+	exit(EXIT_SUCCESS);
 }
 
 int	main(int argc, char **argv)
 {
 	t_sending			server;
 	struct sigaction	sigusr1;
-	struct sigaction	sigusr2;
 
 	set_signal(&sigusr1, SIGUSR1, &receive_signal);
-	set_signal(&sigusr2, SIGUSR2, &receive_signal);
 	get_data(&server, argc, argv);
 	send_data(&server);
+	pause();
 	return (0);
 }

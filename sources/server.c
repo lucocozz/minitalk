@@ -6,7 +6,7 @@
 /*   By: lucocozz <lucocozz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 03:24:44 by lucocozz          #+#    #+#             */
-/*   Updated: 2021/06/30 16:20:28 by lucocozz         ###   ########.fr       */
+/*   Updated: 2021/06/30 17:41:57 by lucocozz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	buffer(char c)
 {
 	static int	i = 0;
-	static char buffer[BUFF_SIZE] = {0};
+	static char	buffer[BUFF_SIZE] = {0};
 
 	buffer[i++] = c;
 	if (c == '\n' || i == BUFF_SIZE)
@@ -47,8 +47,6 @@ static void	receive_byte(int signal, siginfo_t *info, void *data)
 		i = 0;
 		byte = 0;
 	}
-	// if (kill(info->si_pid, SIGUSR2) == -1)
-	// 	exit_error("Error: can't send response to client\n");
 }
 
 int	main(void)
